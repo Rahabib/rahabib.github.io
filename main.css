@@ -1,10 +1,453 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow); /* 'PT Sans Narrow', sans-serif; */
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz); /* 'Yanone Kaffeesatz', sans-serif; */
+/*
+	Notes: Fluid Grid Layout - inspired by: Kevin Cornell
+	url: http://www.alistapart.com/articles/fluidgrids/
+
+	EM Conversion Equation: target(px) Ã· context(px) = result(em)
+	% Conversion Equation: target(px) Ã· parent(px) = result (% * 10)
+
+	Default Font: 16px [true default]
+	total: 960px (960/16 = 60em)
+	8 columns: 108.75px ea. (150/16 = 6.796875em) 
+	9 gutters [includes outter gutters]: 10px ea. (10/16 = 0.625em)
+	
+
+*/
+
+/* #999 */
+html { height: 100%; -webkit-text-size-adjust: none; } /* #nav hack and prevent font scaling in iOS */
 body {
-    background: #333;
-    margin: 0;
-    padding: 0;
-    color: #FFF;
+	padding: 0;
+	margin: 0;
+	font: normal 100% 'PT Sans Narrow', sans-serif;
+    /*font: normal 100% Helvetica, Arial, sans-serif;*/ /* context set = 16px */
+	color: #FFF;
+	background: url("img/rb_bk.png") top center #050329 no-repeat;
+	height: 100%;
+}
+#website_container {
+	position: relative;
+	margin: 0 auto;
+    padding: 0 0.625em; /* 2 outter gutters */
+    max-width: 58.75em; /* 60em - 2 outter gutters padding */
+	height: 100%;
 }
 
+/*========== inline ==========*/
+a:link, a:visited { color: #5D9CD5; }
+a:hover { color: #b5e3fa; }
+h1 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5em;        /* 24px / 16px = 1.5em */
+}
+h2 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 1.25em; /* 20px / 16px = 1.25em */
+}
+h3 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 1.111111111em; /* 18px / 16px = 1.111111111em */
+}
+
+ul {
+	font-size: 0.875em;      /* 14px / 16px = 0.875em */
+}
+.hr {
+	width: 100%;
+	border-top: 1px solid #26455e;
+}
+.hidden {
+	display: none;
+}
+
+/*========== Nav Bar ==========*/
+ #nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	float: left;
+	width: 23.6979167%; /* 2cols @ 108.75px = 217.5px + 10px(1 gutter in middle) = 227.5 / 960 = 0.236979167 */
+	background: url("img/50p_black.png");
+	/*background: url("img/nav_bk2.png") repeat-x left bottom;*/
+	border-right: 1px solid #305776;
+	height: 100%;
+	font-size: 1.2em;
+}
+#nav img {
+	display: block;
+	margin: 50px auto 0;
+	max-width: 99.7802198%; /* 227px/227.5 = 0.997802198 */
+	/*max-height: 50%;*/
+	border: none;
+}
+#nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#nav li {
+	width: 100%;
+}
+#nav li:hover {
+	background: #26455E;
+}
+#nav li:hover a {
+	color: #FFF;
+}
+#nav a:link, #nav a:visited {
+	color: #999;
+	text-decoration: none;
+	display: block;
+	padding: 4% 6%;
+}
+/*.handheld_nav {
+	z-index: 999;
+	display: none;
+}*/
+/*========== Content ==========*/
 #content {
-    max-width: 960px;
+	float: right;
+	width: 74.21875%; /* (108.75px * 6cols = 652.5px) + (10px * 6gutters = 60px) = 712.5px / 960 =  0.7421875 [should be 5 gutters - so something is off, but its not worth tracking down] */
+	margin: 0 0 0 0.96%;
+}
+/*.handheld_content {
+	float: left !important;
+	width: 98% !important;
+}*/
+#titlebar {
+	float: left;
+	clear: both;
+	margin: 30px 0 0 0;
+	width: 100%;
+	border-bottom: 1px solid #4883b3;
+}
+.title {
+	width: 60%;
+	min-height: 20px;
+	float: right;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 0.85em;
+	font-weight: bold;
+	/*font-style: italic;*/
+	color: #ccdcea;
+	text-align: right;
+}
+/*.login {
+	width: 25%;
+	height: 20px;
+	float: left;
+	text-align: right;
+}*/
+#handheld_nav {
+	display: none;
+	clear: both;
+	margin: 2.5em auto 1em auto;
+	font: 'PT Sans Narrow', sans-serif;
+}
+#handheld_nav .toggle, #handheld_nav .toggle {
+	display: block;
+	clear: both;
+	width: 100%;
+	background: url("img/50p_black.png");
+	text-align: center;
+	color: #fcfdfe;
+	text-decoration: none;
+	padding: 0.5em 0;
+	border-radius: 5px;
+	border: 1px solid #4883b3;
+}
+#mobile_nav {
+	/*display: none;*/
+	background: #4883b3;
+	margin: 0 auto;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	width: 97%;
+}
+#mobile_nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#mobile_nav ul li {
+	padding: 0;
+	margin: 0;
+}
+#mobile_nav ul li a {
+	display: block;
+	width: 100%;
+	padding: 0.5em 0;
+	color: #fcfdfe;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.5em;
+	border-top: 1px solid #fcfdfe;
+}
+#mobile_slideshow_alt {
+	/*display: none;*/
+	max-width: 100%
+	border: none;
+	clear: both;
+}
+#titlebar .logo {
+	display: none;
+	float: left;
+	clear: left;
+	border: none;
+	width: 71px;
+	margin-right: 1em; 
+}
+#tagbar {
+	float: left;
+	clear: both;
+	width: 100%;
+	/*border-top: 1px solid #4883b3;*/
+	border-bottom: 1px solid #4883b3;
+	margin-bottom: 0.625em;
+}
+#tagbar img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	border: none;
+}
+.portfolio {
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+}
+.portfolio li {
+	display: block;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	padding: 0;
+	/*margin: 0.87890625em;*/
+	margin: 0.6em;
+}
+.portfolio img {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	border:none;
+}
+.portfolio a {
+	display: block;
+	width: 150px;
+	height: 150px;
+	text-decoration: none;
+}
+.portfolio a .caption {
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 2;
+	height: 100px;
+	width: 150px;
+	/*background: transparent;-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8000000,endColorstr=#D8000000)"; /* IE8 */    
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8000000,endColorstr=#D8000000);*/   /* IE6 & 7 */      
+	/*zoom: 1;*/
+	/*background: rgba(0, 0, 0, 0.85);*/
+	background: url(img/80p_black.png);
+}
+.portfolio div {
+	font-weight: bold;
+	font-size: 1.125em;
+	padding: 0.25em;
+}
+.fancyboxTITLE {
+	font-weight: bold;
+	font-size: 1.2em;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+#footer {
+	float: left;
+	clear: both;
+	width: 100%;
+	border-top: 1px solid #4883b3;
+	text-align: right;
+	font-size: 0.85em;
+	font-style: italic;
+	font-weight: bold;
+	color: #7E7DAB;
+}
+#footer .footer_text {
+	margin-top: 0.5em;
+}
+#footer .logo {
+	display: block;
+	float: right;
+	border: none;
+	width: 71px;
+	margin-left: 1em;
+}
+
+/* slideshow */
+/*--Window/Masking Styles--*/
+#slideshow {
+	float: left;
+	clear: both;
+	position: relative;
+	width: 100%;
+	padding: 0.25em 0 0.25em 0;
+}
+.window {
+	height:286px;	
+	width: 100%; /* height and width set for picture sizes */
+	overflow: hidden; /*--Hides anything outside of the set width/height--*/
+	position: relative;
+}
+.image_reel {
+	position: absolute;
+	width: 100%;
+	top: 0; 		
+	left: 0;
+}
+.image_reel img {
+	width: 25%; /* of total slides 100/4slides = 25 */
+	float: left;
+	border: none;
+}
+
+/*--Paging Styles--*/
+.paging {
+	width: 100%;
+	/*position: absolute;
+	bottom: 0; 
+	right: 0;*/
+	/*width: 178px; 
+	height:47px;
+	z-index: 5;*/ /*--Assures the paging stays on the top layer--*/
+	text-align: right;
+	/*line-height: 40px;*/
+	/*background: url(img/paging_bg2.png) no-repeat;*/
+	display: none; /*--Hidden by default, will be later shown with jQuery--*/
+}
+.paging a {
+	padding: 0.25em 1em;
+	text-decoration: none;
+	color: #fff;
+}
+.paging a.active {
+	font-weight: bold;
+	background: #920000;
+	border: 1px solid #610000;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.paging a:hover {font-weight: bold;}
+
+/*========= Contact =========*/
+form ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+form li {
+	float: left;
+	width: 100%;
+	clear: both;
+	padding: 0.2em 0;
+}
+form label {
+	float: left;
+	width: 4em;
+	font-size: 1.2em;
+}
+form label.full-width {
+	float: left;
+	width: 100%;
+	font-size: 1.2em;
+}
+form fieldset {
+	padding: 0;
+	border: none;
+}
+form input[type="text"], form input[type="email"], form input[type="tel"], form input[type="number"] {
+	width: 80%;
+	background: #234252;
+	color: #ccdcea;
+	outline: none;
+	border: 1px solid #ccdcea;
+	padding: 0.1em;
+}
+form .short {
+	max-width: 125px;
+}
+form textarea {
+	width: 90%;
+	height: 20em;
+	background: #234252;
+	color: #ccdcea;
+	outline: none;
+	border: 1px solid #ccdcea;
+	padding: 0.1em;
+}
+form input[type="submit"].right {
+	float: right;
+	margin-right: 10%;
+	height: 3em;
+	width: 10em;
+}
+form input[type="submit"] {
+	float: left;
+	/*margin-right: 10%;*/
+	padding: 0.25em;
+	margin: 0.5em 0;
+	height: 3em;
+	width: 10em;
+}
+
+@media screen and (max-width:786px) {
+	#nav {
+		display: none;
+	}	
+	#handheld_nav {
+		display: block;
+	}
+	#content {
+		/*float: left !important;*/
+		width: 100%;
+	}
+	#titlebar {
+		margin: 0.2em 0 0 0;
+		border-bottom: none;
+	}
+	#titlebar .logo {
+		display: block;
+	}
+	form input[type="text"], form input[type="email"], form input[type="tel"] {
+		font-size: 1.5em;
+		width: 90%;
+	}
+	form textarea {
+		font-size: 1.3em;
+	}
+	#mobile_slideshow_alt {
+		display: block;
+	}
+	#mobile_slideshow_alt img {
+		display: block;
+		border: none;
+		max-width: 100%;
+	}
+	#slideshow {
+		display: none;
+	}
+	.portfolio li {
+		margin: 0.87890625em;
+	}
 }
