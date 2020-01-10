@@ -13,7 +13,7 @@
 	9 gutters [includes outter gutters]: 10px ea. (10/16 = 0.625em)
 	
 
-    
+
 */
 
 /* #999 */
@@ -65,9 +65,13 @@ ul {
 /*========== Nav Bar ==========*/
  #nav {
 	position: absolute;
-	top: 0;
-	left: 0;
-	float: left;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    float: left;
+    z-index: -1;
 	width: 23.6979167%; /* 2cols @ 108.75px = 217.5px + 10px(1 gutter in middle) = 227.5 / 960 = 0.236979167 */
 	background: url("img/50p_black.png");
 	/*background: url("img/nav_bk2.png") repeat-x left bottom;*/
