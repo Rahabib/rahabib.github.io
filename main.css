@@ -33,8 +33,6 @@ body {
 }
 #website_container {
     position: relative;
-    top: 0;
-    bottom: 0;
 	margin: 0 auto;
     padding: 0 0.625em; /* 2 outter gutters */
     max-width: 58.75em; /* 60em - 2 outter gutters padding */
@@ -73,13 +71,10 @@ ul {
  #nav {
     height: inherit;
     position: absolute;
-    top: 0;
-    bottom: 0;
     height: 100%;
     min-height: 100%;
     overflow: hidden;
     float: left;
-    z-index: -1;
 	width: 23.6979167%; /* 2cols @ 108.75px = 217.5px + 10px(1 gutter in middle) = 227.5 / 960 = 0.236979167 */
     background: rgba(0,0,0,0.35);
 	border-right: 1px solid #305776;
