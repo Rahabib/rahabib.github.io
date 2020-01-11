@@ -76,9 +76,12 @@ ul {
     overflow: hidden;
     float: left;
 	width: 23.6979167%; /* 2cols @ 108.75px = 217.5px + 10px(1 gutter in middle) = 227.5 / 960 = 0.236979167 */
-    background: rgba(0,0,0,0.35);
+    /* background: rgba(0,0,0,0.35); */
 	border-right: 1px solid #305776;
-	font-size: 1.2em;
+    font-size: 1.2em;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0) 100%);
+
 }
 #nav img {
 	display: block;
