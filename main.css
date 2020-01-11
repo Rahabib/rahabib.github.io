@@ -33,7 +33,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 8px;
+    padding: 0 8px;
 }
 
 /*========== inline ==========*/
@@ -62,6 +62,17 @@ ul {
 .hidden {
 	display: none;
 }
+.title {
+	width: 100%;
+	/* min-height: 20px; */
+	float: right;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	/*font-style: italic;*/
+	color: #ccdcea;
+	text-align: right;
+}
 
 /*========== Header ==========*/
 #header {
@@ -85,7 +96,7 @@ ul {
 	width: 100%;
 	list-style-type: none;
 	margin: 0;
-	padding: 50px 0;
+	padding: 100px 0;
 	font-size: 0.75em;
 }
 .portfolio li {
@@ -132,13 +143,12 @@ ul {
     background: url("img/prism.png") top center;
 }
 #footer .footer_text {
-	margin-top: 0.5em;
+	margin-top: 8px;
 }
 #footer .logo {
 	display: block;
 	float: right;
 	border: none;
-	width: 71px;
 	margin-left: 1em;
 }
 
@@ -166,17 +176,7 @@ ul {
 	width: 100%;
 	border-bottom: 1px solid #4883b3;
 }
-.title {
-	width: 60%;
-	min-height: 20px;
-	float: right;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 0.85em;
-	font-weight: bold;
-	/*font-style: italic;*/
-	color: #ccdcea;
-	text-align: right;
-}
+
 #titlebar .logo {
 	display: none;
 	float: left;
