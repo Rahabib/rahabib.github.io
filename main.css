@@ -70,14 +70,15 @@ ul {
 	position: absolute;
     top: 0;
     bottom: 0;
+    height: 100%;
     overflow: hidden;
     float: left;
     z-index: -1;
 	width: 23.6979167%; /* 2cols @ 108.75px = 217.5px + 10px(1 gutter in middle) = 227.5 / 960 = 0.236979167 */
-	background: url("img/50p_black.png");
+    /* background: url("img/50p_black.png"); */
+    background: rgba(0,0,0,0.5);
 	/*background: url("img/nav_bk2.png") repeat-x left bottom;*/
 	border-right: 1px solid #305776;
-	height: 100%;
 	font-size: 1.2em;
 }
 #nav img {
