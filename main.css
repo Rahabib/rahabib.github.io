@@ -19,6 +19,7 @@
 /* #999 */
 html { 
     height: 100%; 
+    min-height: 100%;
     -webkit-text-size-adjust: none; 
 } /* #nav hack and prevent font scaling in iOS */
 body {
@@ -27,7 +28,8 @@ body {
 	font: normal 100% 'PT Sans Narrow', sans-serif;
     /*font: normal 100% Helvetica, Arial, sans-serif;*/ /* context set = 16px */
 	color: #FFF;
-	background: url("img/rb_bk.png") top center #050329 no-repeat;
+    /* background: url("img/rb_bk.png") top center #050329 repeat-x; */
+    background: url("img/prism.png") top center;
     height: 100%;
     min-height: 100%;
 }
@@ -76,11 +78,11 @@ ul {
     overflow: hidden;
     float: left;
 	width: 23.6979167%; /* 2cols @ 108.75px = 217.5px + 10px(1 gutter in middle) = 227.5 / 960 = 0.236979167 */
-    /* background: rgba(0,0,0,0.35); */
+    background: rgba(0,0,0,0.35);
 	border-right: 1px solid #305776;
     font-size: 1.2em;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0) 100%);
+    /* background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 95%, rgba(0,0,0,0) 100%); */
 
 }
 #nav img {
