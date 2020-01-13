@@ -27,8 +27,8 @@ body {
     /*font: normal 100% Helvetica, Arial, sans-serif;*/ /* context set = 16px */
 	color: #FFF;
     /* background: url("img/rb_bk.png") top center #050329 repeat-x; */
-    /* background: url("img/prism.png") top center; */
-    background: rgb(100,100,100);
+    /* background: rgb(100,100,100); */
+    background: url("img/prism.png") top center;
 }
 .container {
     max-width: 1200px;
@@ -77,7 +77,7 @@ ul {
 /*========== Header ==========*/
 #header {
     width: 100%;
-    background: url("img/prism.png") top center;
+    /* background: url("img/prism.png") top center; */
     padding: 20px 0;
     border-bottom: 1px solid rgb(72,131,179);
 }
@@ -89,6 +89,9 @@ ul {
 }
 
 /*========== Portfolio ==========*/
+#portfolio{
+    background: rgb(100,100,100);
+}
 .portfolio {
 	display: block;
 	float: left;
@@ -96,7 +99,7 @@ ul {
 	width: 100%;
 	list-style-type: none;
 	margin: 0;
-	padding: 100px 0;
+	padding: 50px 0;
 	font-size: 0.75em;
 }
 .portfolio li {
@@ -140,7 +143,7 @@ ul {
 	font-style: italic;
 	font-weight: bold;
     color: #7E7DAB;
-    background: url("img/prism.png") top center;
+    /* background: url("img/prism.png") top center; */
 }
 #footer .footer_text {
 	margin-top: 8px;
