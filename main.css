@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=PT+Sans+Narrow); /* 'PT Sans Narrow', sans-serif; */
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz); /* 'Yanone Kaffeesatz', sans-serif; */
+@import url(//fonts.googleapis.com/css?family=Montserrat:200,400&display=swap); /* 'Montserrat', sans-serif; */
 /*
 	Notes: Fluid Grid Layout - inspired by: Kevin Cornell
 	url: http://www.alistapart.com/articles/fluidgrids/
@@ -16,14 +17,27 @@
 
 */
 
-/* #999 */
+/*========== Vars ==========*/
+
+:root {
+    --rb-blue: rgb(72,131,179);
+    --dark-gray: #333;
+    --medium-gray: rgb(100,100,100);
+    --light-gray: rgb(240,240,240);
+    --primary-font: normal 100% 'PT Sans Narrow', sans-serif;
+    /* --header-font: 'Yanone Kaffeesatz', sans-serif; */
+    --header-font: 'Montserrat', sans-serif;
+}
+
+
+
 html { 
     -webkit-text-size-adjust: none; 
 } /* #nav hack and prevent font scaling in iOS */
 body {
 	padding: 0;
 	margin: 0;
-	font: normal 100% 'PT Sans Narrow', sans-serif;
+	font: var(--primary-font);
     /*font: normal 100% Helvetica, Arial, sans-serif;*/ /* context set = 16px */
 	color: #FFF;
     /* background: url("img/rb_bk.png") top center #050329 repeat-x; */
@@ -40,15 +54,18 @@ body {
 a:link, a:visited { color: #5D9CD5; }
 a:hover { color: #b5e3fa; }
 h1 {
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: var(--header-font);
     font-size: 1.5em;        /* 24px / 16px = 1.5em */
 }
 h2 {
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 1.25em; /* 20px / 16px = 1.25em */
+	font-family: var(--header-font);
+    margin: 0;
+    padding: 1em 0;
+    font-size: 1.5em;
+    font-weight: 200;
 }
 h3 {
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: var(--header-font);
 	font-size: 1.111111111em; /* 18px / 16px = 1.111111111em */
 }
 
@@ -66,12 +83,16 @@ ul {
 	width: 100%;
 	/* min-height: 20px; */
 	float: right;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: var(--header-font);
 	font-size: 1em;
 	font-weight: bold;
 	/*font-style: italic;*/
 	color: #ccdcea;
 	text-align: right;
+}
+.clear {
+    float: left;
+    clear: both;
 }
 
 /*========== Header ==========*/
@@ -107,9 +128,11 @@ ul {
 	float: left;
 	overflow: hidden;
 	position: relative;
-	width: 150px;
+	width: 125px;
 	height: 150px;
-	padding: 0;
+    list-style-position: inside;
+    margin: 4px;
+    padding: 0;
 }
 .portfolio img {
 	display: block;
@@ -124,12 +147,40 @@ ul {
 	display: block;
 	width: 150px;
 	height: 150px;
-	text-decoration: none;
+    text-decoration: none;
 }
+.portfolio a:after {
+    content:"\A";
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.2);
+    position:absolute;
+    top:0;
+    left:0;
+}
+.portfolio a:hover:after {
+    background:rgba(0, 0, 0, 0);
+} 
+
 .portfolio div {
 	font-weight: bold;
 	font-size: 1.125em;
 	padding: 8px;
+}
+
+/*========== GLightbox ==========*/
+.goverlay {
+    background: rgba(10,10,10,.89) !important
+}
+.gslide-title {
+    margin: 0;
+    color: var(--rb-blue) !important;
+}
+.gslide-desc {
+    color: var(--dark-gray) !important;
+}
+.gslide-description {
+    background-color: var(--light-gray) !important;
 }
 
 /*========== Footer ==========*/
@@ -146,7 +197,7 @@ ul {
     /* background: url("img/prism.png") top center; */
 }
 #footer .footer_text {
-	margin-top: 8px;
+    margin-top: 8px;
 }
 #footer .logo {
 	display: block;
@@ -168,10 +219,6 @@ ul {
 	width: 74.21875%; /* (108.75px * 6cols = 652.5px) + (10px * 6gutters = 60px) = 712.5px / 960 =  0.7421875 [should be 5 gutters - so something is off, but its not worth tracking down] */
 	margin: 0 0 0 0.96%;
 }
-/*.handheld_content {
-	float: left !important;
-	width: 98% !important;
-}*/
 #titlebar {
 	float: left;
 	clear: both;
@@ -202,64 +249,6 @@ ul {
 	max-width: 100%;
 	border: none;
 }
-
-
-
-/* slideshow */
-/*--Window/Masking Styles--*/
-#slideshow {
-	float: left;
-	clear: both;
-	position: relative;
-	width: 100%;
-	padding: 0.25em 0 0.25em 0;
-}
-.window {
-	height:286px;	
-	width: 100%; /* height and width set for picture sizes */
-	overflow: hidden; /*--Hides anything outside of the set width/height--*/
-	position: relative;
-}
-.image_reel {
-	position: absolute;
-	width: 100%;
-	top: 0; 		
-	left: 0;
-}
-.image_reel img {
-	width: 25%; /* of total slides 100/4slides = 25 */
-	float: left;
-	border: none;
-}
-
-/*--Paging Styles--*/
-.paging {
-	width: 100%;
-	/*position: absolute;
-	bottom: 0; 
-	right: 0;*/
-	/*width: 178px; 
-	height:47px;
-	z-index: 5;*/ /*--Assures the paging stays on the top layer--*/
-	text-align: right;
-	/*line-height: 40px;*/
-	/*background: url(img/paging_bg2.png) no-repeat;*/
-	display: none; /*--Hidden by default, will be later shown with jQuery--*/
-}
-.paging a {
-	padding: 0.25em 1em;
-	text-decoration: none;
-	color: #fff;
-}
-.paging a.active {
-	font-weight: bold;
-	background: #920000;
-	border: 1px solid #610000;
-	-moz-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-.paging a:hover {font-weight: bold;}
 
 @media screen and (max-width:786px) {
 	#nav {
