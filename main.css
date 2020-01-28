@@ -62,11 +62,13 @@ h2 {
     margin: 0;
     padding: 1em 0;
     font-size: 1.5em;
-    font-weight: 200;
+	font-weight: 200;
+	clear: both;
 }
 h3 {
 	font-family: var(--header-font);
 	font-size: 1.111111111em; /* 18px / 16px = 1.111111111em */
+	font-weight: 200;
 }
 
 ul {
@@ -94,6 +96,12 @@ ul {
     float: left;
     clear: both;
 }
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
 
 /*========== Header ==========*/
 #header {
@@ -107,6 +115,32 @@ ul {
     width: min-content;
     display: block;
     margin: 0 auto;
+}
+
+/*========== Experience ==========*/
+#experience{
+	background: rgb(75,75,75);
+	width: 100%;
+}
+#experience img {
+	width: 50%;
+}
+#experience .description {
+	width: 46%;
+	padding: 0 2%;
+	text-align: center;
+}
+#experience p {
+	text-align: center;
+	font-family: var(--header-font);
+	font-size: 1em;
+	font-weight: 200;
+}
+#experience .item {
+	float: left;
+	clear: both;
+	margin: 100px 0;
+	width: 100%;
 }
 
 /*========== Portfolio ==========*/
