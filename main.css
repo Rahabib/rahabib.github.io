@@ -1,6 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=PT+Sans+Narrow); /* 'PT Sans Narrow', sans-serif; */
 @import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz); /* 'Yanone Kaffeesatz', sans-serif; */
-@import url(//fonts.googleapis.com/css?family=Montserrat:200,400&display=swap); /* 'Montserrat', sans-serif; */
+@import url(//fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap); /* 'Montserrat', sans-serif; */
 /*
 	Notes: Fluid Grid Layout - inspired by: Kevin Cornell
 	url: http://www.alistapart.com/articles/fluidgrids/
@@ -125,10 +125,16 @@ ul {
 #experience img {
 	width: 50%;
 }
+#experience .description h2{
+	font-weight: 300;
+	color: #aaa;
+}
 #experience .description {
 	width: 46%;
-	padding: 0 2%;
+	margin: 0 2%;
 	text-align: center;
+	/* border-top: 1px solid #888;
+	border-bottom: 1px solid #888; */
 }
 #experience p {
 	text-align: center;
